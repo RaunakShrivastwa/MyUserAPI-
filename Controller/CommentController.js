@@ -3,7 +3,6 @@ const Post= require('../Model/post')
 
 module.exports.saveComment=(req,res)=>{
     let p_id=req.params.id;
-    console.log(p_id)
    Post.findById(p_id).then(post=>{
      if(post){
         comment.create({

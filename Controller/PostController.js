@@ -48,7 +48,7 @@ module.exports.fullPost = async (req, res) => {
 module.exports.deletePostData=(req,res)=>{
    console.log(req.params.id)
    Post.findById(req.params.id).then(post=>{
-      console.log(post)
+      console.log(post.user.id)
       if(post.user == req.user.id){
           post.deleteOne()
          Comment.deleteMany({post: req.params.id}).then(data=>{
